@@ -1,0 +1,103 @@
+<html>
+	<head>
+		<title>Praktyczna Pani</title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/fontello.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Work+Sans:ital,wght@0,400;0,600;1,700&display=swap" rel="stylesheet">
+		<style>
+			#content
+			{
+				width:1200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="topbar">
+				<div id="logo">
+					<h1>Praktyczna Pani</h1>
+				</div>
+				<div id="Basket">
+					<i  class="icon-basket"></i>
+				</div>
+				<a href="{{url_for('accountaboutme')}}">
+					<div id="Account">
+						<i  class="icon-user-circle">&#8291;</i>
+					</div>
+				</a>
+			</div>
+			<div id="nav">
+				<div id="nav-options">
+					<a href="{{url_for('index')}}">
+						<div class="nav-option">
+							<p>Strona główna</p>
+						</div>
+					</a>
+					<a href="{{url_for('kategorie')}}">
+						<div class="nav-option">
+							<p>Sklep</p>
+						</div>
+					</a>
+					<div class="nav-option">
+						<p>Blog</p>
+					</div>
+					<div class="nav-option">
+						<p>O nas</p>
+					</div>
+					<div class="nav-option">
+						<p>Kontakt</p>
+					</div>
+				</div>
+			</div>
+			<div id="content">
+				<div class="category">
+					<a href="{{url_for('maseczki')}}">
+						<div class="image">
+							<img src="{{ url_for('static', filename='img/maseczka.png') }}" width="150px" height="150px">
+						</div>
+						<div class="category-text">
+							<p>Zobacz oferty</p>
+						</div>
+					</a>
+				</div>
+				<div class="category">
+					<div class="image">
+						<img src="{{ url_for('static', filename='img/torba.png') }}" width="150px" height="150px">
+					</div>
+					<div class="category-text">
+						<p>Zobacz oferty</p>
+					</div>
+				</div>
+				<div class="category">
+					<div class="image">
+						<img src="{{ url_for('static', filename='img/pluszaki.png') }}" width="150px" height="150px">
+					</div>
+					<div class="category-text">
+						<p>Zobacz oferty</p>
+					</div>
+				</div>
+			</div>>
+		</div>
+		<div id="fotter">
+			<div class="socials">
+				<a href="https://www.facebook.com/Praktyczna-pani-103977331815634">
+					<div class="fb">
+						<i class="icon-facebook"></i>
+					</div>
+				</a>
+				<div class="tw">
+					<i class="icon-twitter"></i>
+				</div>
+				<div class="ig">
+					<i class="icon-instagram"></i>
+				</div>
+				<div class="mail">
+					<i class="icon-mail"></i>
+				</div>
+			</div>
+			<p>2021 Praktyczna Pani.pl&copy; wszelkie prawa zastrzeżone</p>
+		</div>
+	</body>
+</html>

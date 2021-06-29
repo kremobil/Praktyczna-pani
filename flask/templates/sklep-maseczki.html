@@ -1,0 +1,134 @@
+<html>
+	<head>
+		<title>Praktyczna Pani</title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/fontello.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Work+Sans:ital,wght@0,400;0,600;1,700&display=swap" rel="stylesheet">
+		<style>
+			#container
+			{
+				width:1400px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="topbar">
+				<div id="logo">
+					<h1>Praktyczna Pani</h1>
+				</div>
+				<div id="Basket">
+					<i  class="icon-basket">&#8291;</i>
+				</div>
+				<a href="{{url_for('accountaboutme')}}">
+					<div id="Account">
+						<i  class="icon-user-circle">&#8291;</i>
+					</div>
+				</a>
+			</div>
+			<div id="nav">
+				<div id="nav-options">
+					<a href="{{url_for('index')}}">
+						<div class="nav-option">
+							<p>Strona główna</p>
+						</div>
+					</a>
+					<a href={{url_for('kategorie')}}>
+						<div class="nav-option">
+							<p>Sklep</p>
+						</div>
+					</a>
+					<div class="nav-option">
+						<p>Blog</p>
+					</div>
+					<div class="nav-option">
+						<p>O nas</p>
+					</div>
+					<div class="nav-option">
+						<p>Kontakt</p>
+					</div>
+				</div>
+			</div>
+			<div id="content">
+				<div id="filters">
+					<div class="filter">
+						<p><i class="icon-ok-circled2"></i>Dla dorosłych</p>
+					</div>
+					<div class="filter">
+						<p><i class="icon-ok-circled2"></i>Dla dzieci</p>
+					</div>
+					<div class="filter">
+						<p><i class="icon-ok-circled2"></i>Dla kobiet</p>
+					</div>
+					<div class="filter">
+						<p><i class="icon-ok-circled2"></i>Dla mężczyzn</p>
+					</div>
+				</div>
+				<div id="products">
+					{%for a in [0,5,10]%}
+					<div class="produts-raw">
+						{%if maseczki|length - a >= 5%}
+							{%for b in [0,1,2,3,4]%}
+								<div class="products-col">
+									<div class="product-name">
+										<p>{{maseczki[b + a]['name']}}<br/><span class="price"><b>{{maseczki[b + a]['price']}}zł</b></span></p>
+									</div>
+									<div class="product-image-plate">
+										{% set x = maseczki[a + b]["image"] %}
+										<img src="{{ url_for('static', filename='img/'+x) }}" width="187.5px" height="162.5px">
+									</div>
+									<div class="buy-button-plate">
+										<a href="{{url_for('maseczka', id=b + a)}}">
+											<p>Kup Teraz <i class="icon-cart-plus"></i></p>
+										</a>
+									</div>
+								</div>
+							{%endfor%}
+						{%endif%}
+						{%if maseczki|length - a < 5%}
+							{%for b in range(maseczki|length - a)%}
+								<div class="products-col">
+									<div class="product-name">
+										<p>{{maseczki[b + a]['name']}}<br/><span class="price"><b>{{maseczki[b + a]['price']}}zł</b></span></p>
+									</div>
+									<div class="product-image-plate">
+										{% set x = maseczki[a + b]["image"] %}
+										<img src="{{ url_for('static', filename='img/'+x) }}" width="187.5px" height="162.5px">
+									</div>
+									<div class="buy-button-plate">
+										<a href="{{url_for('maseczka', id=b + a)}}">
+											<p>Kup Teraz <i class="icon-cart-plus"></i></p>
+										</a>
+									</div>
+								</div>
+							{%endfor%}
+						{%endif%}
+
+					</div>
+					{%endfor%}
+				</div>
+			</div>
+		</div>
+		<div id="fotter">
+			<div class="socials">
+				<a href="https://www.facebook.com/Praktyczna-pani-103977331815634">
+					<div class="fb">
+						<i class="icon-facebook"></i>
+					</div>
+				</a>
+				<div class="tw">
+					<i class="icon-twitter"></i>
+				</div>
+				<div class="ig">
+					<i class="icon-instagram"></i>
+				</div>
+				<div class="mail">
+					<i class="icon-mail"></i>
+				</div>
+			</div>
+			<p>2021 Praktyczna Pani.pl&copy; wszelkie prawa zastrzeżone</p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,157 @@
+<html>
+	<head>
+		<title>Praktyczna Pani</title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/fontello.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Work+Sans:ital,wght@0,400;0,600;1,700&display=swap" rel="stylesheet">
+		<style>
+			#container
+			{
+				width:1400px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="topbar">
+				<div id="logo">
+					<h1>Praktyczna Pani</h1>
+				</div>
+				<div id="Basket">
+					<i  class="icon-basket">&#8291;</i>
+				</div>
+				<a href="{{url_for('accountaboutme')}}">
+					<div id="Account">
+						<i  class="icon-user-circle">&#8291;</i>
+					</div>
+				</a>
+			</div>
+			<div id="nav">
+				<div id="nav-options">
+					<a href="{{url_for('index')}}">
+						<div class="nav-option">
+							<p>Strona główna</p>
+						</div>
+					</a>
+					<a href={{url_for('kategorie')}}>
+						<div class="nav-option">
+							<p>Sklep</p>
+						</div>
+					</a>
+					<div class="nav-option">
+						<p>Blog</p>
+					</div>
+					<div class="nav-option">
+						<p>O nas</p>
+					</div>
+					<div class="nav-option">
+						<p>Kontakt</p>
+					</div>
+				</div>
+			</div>
+			<div id="content">
+				<div id="basic-info">
+					<div id="product-image">
+						{% set x = maseczka["image"] %}
+						<img src="{{ url_for('static', filename='img/'+x) }}" width="550px" height="550px">
+					</div>
+					<div id="product-basic-info">
+						<div id="name">
+							<h1>
+								{{maseczka['name']}}
+							</h1>
+						</div>
+						<div id="price">
+							<h2>
+								{{maseczka['price']}}zł
+							</h2>
+						</div>
+						<div id="info">
+							<p>
+								🕥 realizacja w ciągu 24h
+							</p>
+							<p>
+								🚚 wysyłka w ciągu 48h
+							</p>
+							<p>
+								📦 dostępne w magazynie
+							</p>
+						</div>
+						<div id="cart-buttons">
+							<div id="buy-button">
+								<b>
+									<p>Kup Teraz</p>
+								</b>
+							</div>
+							<div id="add-button">
+								<b>
+									<p>Dodaj do Koszyka</p>
+								</b>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="solid-line">
+				</div>
+				<div id="description">
+					<div id="description-hedder">
+						<h1>Opis produktu</h1>
+					</div>
+					<div id="description-content">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc venenatis, augue a sodales convallis, diam lectus ornare lacus, ac convallis odio
+							justo in sem. Donec ut diam enim. Suspendisse tincidunt viverra mauris, ac tempor tellus sodales non. Proin lobortis mauris id eleifend bibendum.
+							Donec sed erat elementum, vehicula turpis eu, fermentum ipsum. Praesent tincidunt risus quis tincidunt vulputate. Sed lobortis a nisl id rhoncus.
+							Proin consectetur mauris vel diam maximus blandit. Sed sodales aliquet mattis. Nam quis dictum ex. Cras vitae ipsum ac ex hendrerit venenatis.
+						</p>
+					</div>
+				</div>
+				<div class="solid-line">
+				</div>
+				<div id="specification">
+					<div id="specification-hedder">
+						<h1>Specyfikacja produktu</h1>
+					</div>
+					<div id="specification-content">
+						<ul>
+							<li>100% bawełna</li>
+							<li>z drócikiem</li>
+							<li>można prać i prasować</li>
+							<li>wielokrotnego użytku</li>
+						</ul>
+					</div>
+				</div>
+				<div id="solid-line">
+				</div>
+				<div id="comments">
+					<div id="comments-hedder">
+						<h1>Komentarze</h1>
+					</div>
+					<div id="comments-content">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="fotter">
+			<div class="socials">
+				<a href="https://www.facebook.com/Praktyczna-pani-103977331815634">
+					<div class="fb">
+						<i class="icon-facebook"></i>
+					</div>
+				</a>
+				<div class="tw">
+					<i class="icon-twitter"></i>
+				</div>
+				<div class="ig">
+					<i class="icon-instagram"></i>
+				</div>
+				<div class="mail">
+					<i class="icon-mail"></i>
+				</div>
+			</div>
+			<p>2021 Praktyczna Pani.pl&copy; wszelkie prawa zastrzeżone</p>
+		</div>
+	</body>
+</html>

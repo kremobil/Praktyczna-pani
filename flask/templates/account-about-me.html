@@ -1,0 +1,188 @@
+<html>
+	<head>
+		<title>Praktyczna Pani</title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/fontello.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Work+Sans:ital,wght@0,400;0,600;1,700&display=swap" rel="stylesheet">
+		<style>
+			#container
+			{
+				width:1400px;
+			}
+			#content
+			{
+				width:1200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="topbar">
+				<div id="logo">
+					<h1>Praktyczna Pani</h1>
+				</div>
+				<div id="Basket">
+					<i  class="icon-basket">&#8291;</i>
+				</div>
+				<a href="{{url_for('login')}}">
+					<div id="Account">
+						<i  class="icon-user-circle">&#8291;</i>
+					</div>
+				</a>
+			</div>
+			<div id="nav">
+				<div id="nav-options">
+					<a href="{{url_for('index')}}">
+						<div class="nav-option">
+							<p>Strona główna</p>
+						</div>
+					</a>
+					<a href={{url_for('kategorie')}}>
+						<div class="nav-option">
+							<p>Sklep</p>
+						</div>
+					</a>
+					<div class="nav-option">
+						<p>Blog</p>
+					</div>
+					<div class="nav-option">
+						<p>O nas</p>
+					</div>
+					<div class="nav-option">
+						<p>Kontakt</p>
+					</div>
+				</div>
+			</div>
+			<div id="content">
+				<div class="acoount-nav">
+					<div class="account-nav-options">
+						<a class="nav-option-a" href="{{url_for('accountaboutme')}}">
+							<div class="account-nav-option">
+								<p>O mnie</p>
+							</div>
+						</a>
+						<a class="nav-option-a" href="{{url_for('accountorders')}}">
+							<div class="account-nav-option">
+								<p>Moje zamówenia</p>
+							</div>
+						</a>
+						<a class="nav-option-a" href="{{url_for('accountseciurity')}}">
+							<div class="account-nav-option">
+								<p>Bezpieczeństwo</p>
+							</div>
+						</a>
+						<a class="nav-option-a" href="{{url_for('accountadress')}}">
+							<div class="account-nav-option">
+								<p>Adresy</p>
+							</div>
+						</a>
+						<a class="nav-option-a" href="{{url_for('accountfavoriteposts')}}">
+							<div class="account-nav-option">
+								<p>Ulubione posty</p>
+							</div>
+						</a>
+					</div>
+					<a class="log-out-a" href="{{url_for('logout')}}">
+						<div class="account-nav-option-log-out">
+							<b>
+									<p>Wyloguj się</p>
+							</b>
+						</div>
+					</a>
+				</div>
+				<div id="account-information">
+					<div class="account-information-hedder">
+						<b>
+							<p>O mnie</p>
+						</b>
+					</div>
+					<div class="basic-account-container">
+						<div class="avatar-bg">
+							<div class="avatar">
+							</div>
+						</div>
+						<div class="basic-account-info">
+							<div class="username-container">
+								<div class="username">
+									<p>Kremobil</p>
+								</div>
+								<a>
+									<div class="username-button">
+										✎
+									</div>
+								</a>
+							</div>
+							<div class="other-infos-container">
+								<div class="other-infos-row">
+									<div class="other-info-container"|>
+										<div class="other-info-name">
+											<p>Wiktor</p>
+										</div>
+										<a>
+											<div  class="other-info-button">
+												✎
+											</div>
+										</a>
+									</div>
+									<div class="other-info-container"|>
+										<div class="other-info-name">
+											<p>Mężczyzna</p>
+										</div>
+										<a>
+											<div  class="other-info-button">
+												✎
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="other-infos-row">
+									<div class="other-info-container"|>
+										<div class="other-info-name">
+											<p>21 Lat</p>
+										</div>
+										<a>
+											<div  class="other-info-button">
+												✎
+											</div>
+										</a>
+									</div>
+									<div class="other-info-container"|>
+										<div class="other-info-name">
+											<p>Morzewiec</p>
+										</div>
+										<a>
+											<div  class="other-info-button">
+												✎
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="fotter">
+			<div class="socials">
+				<a href="https://www.facebook.com/Praktyczna-pani-103977331815634">
+					<div class="fb">
+						<i class="icon-facebook"></i>
+					</div>
+				</a>
+				<div class="tw">
+					<i class="icon-twitter"></i>
+				</div>
+				<div class="ig">
+					<i class="icon-instagram"></i>
+				</div>
+				<div class="mail">
+					<i class="icon-mail"></i>
+				</div>
+			</div>
+			<p>2021 Praktyczna Pani.pl&copy; wszelkie prawa zastrzeżone</p>
+		</div>
+	</body>
+</html>
