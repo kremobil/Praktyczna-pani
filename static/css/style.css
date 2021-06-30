@@ -889,3 +889,10 @@ button:hover
 {
     background-color:#4d4d4d;
 }
+.bg
+{
+    width:1300px;
+    height:500px;
+    background-color:red;
+    border-radius:50px;
+}
