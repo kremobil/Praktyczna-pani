@@ -19,9 +19,11 @@
 				<div id="logo">
 					<h1>Praktyczna Pani</h1>
 				</div>
-				<div id="Basket">
-					<i  class="icon-basket">&#8291;</i>
-				</div>
+				<a href="{{url_for('basket')}}">
+					<div id="Basket">
+						<i  class="icon-basket">&#8291;</i>
+					</div>
+				</a>
 				<a href="{{url_for('accountaboutme')}}">
 					<div id="Account">
 						<i  class="icon-user-circle">&#8291;</i>
@@ -40,9 +42,11 @@
 							<p>Sklep</p>
 						</div>
 					</a>
-					<div class="nav-option">
-						<p>Blog</p>
-					</div>
+					<a href="{{url_for('blog')}}">
+						<div class="nav-option">
+							<p>Blog</p>
+						</div>
+					</a>
 					<div class="nav-option">
 						<p>O nas</p>
 					</div>
@@ -55,14 +59,39 @@
 				<div class="slider">
 					<div class="slide">
 						<div class="arrows">
-							<div class="arrow">
-								<button onclick="slide_change(-1)">❮</button>
-							</div>
-							<div class="arrow">
-								<button onclick="slide_change(1)">❯</button>
-							</div>
+							<a>
+								<div class="arrow">
+									<button onclick="slide_change(-1)" class="button">❮</button>
+								</div>
+							</a>
+							<a>
+								<div class="arrowsecound">
+									<button onclick="slide_change(1)" class="button2">❯</button>
+								</div>
+							</a>
 						</div>
 					</div>
+				</div>
+				<div class="index-hedder">
+					<p>Nowe produkty</p>
+				</div>
+				<div class="new-products">
+					{%for b in newproducts%}
+						<div class="new-products-col">
+							<div class="product-name">
+								<p>{{b['name']}}<br/><span class="price"><b>{{b['price']}}zł</b></span></p>
+							</div>
+							<div class="product-image-plate">
+								{% set x = b["image"] %}
+								<img src="{{ url_for('static', filename='img/'+x) }}" width="187.5px" height="162.5px">
+							</div>
+							<div class="buy-button-plate">
+								<a href="{{url_for('maseczka', id=b['id'])}}">
+									<p>Kup Teraz <i class="icon-cart-plus"></i></p>
+								</a>
+							</div>
+						</div>
+					{%endfor%}
 				</div>
 			</div>
 		</div>

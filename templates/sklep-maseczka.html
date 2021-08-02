@@ -80,16 +80,20 @@
 							</p>
 						</div>
 						<div id="cart-buttons">
-							<div id="buy-button">
-								<b>
-									<p>Kup Teraz</p>
-								</b>
-							</div>
-							<div id="add-button">
-								<b>
-									<p>Dodaj do Koszyka</p>
-								</b>
-							</div>
+							<a href="{{url_for('addtobasket', product='maseczka', id=maseczka['id'], addorundo='add')}}">
+								<div id="buy-button">
+									<b>
+										<p>Kup teraz</p>
+									</b>
+								</div>
+							</a>
+							<a href="{{url_for('addtobasket2', product='maseczka', id=maseczka['id'], addorundo='add')}}">
+								<div id="add-button">
+									<b>
+										<p>Dodaj do koszyka</p>
+									</b>
+								</div>
+							</a>
 						</div>
 					</div>
 				</div>

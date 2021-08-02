@@ -9,7 +9,8 @@ var slide_number = 1
 var photo = "url('../static/img/slide" + slide_number + ".jpg')"
 const slide = document.getElementsByClassName("slide")[0]
 const slider = document.getElementsByClassName("slider")[0]
-
+const button = document.getElementsByClassName("arrow")[0]
+const button2 = document.getElementsByClassName("arrowsecound")[0]
 slide.style.backgroundImage = photo;
 console.log(photo)
 
@@ -26,32 +27,35 @@ function slide_change(increase){
     }
     photo = "url('../static/img/slide" + slide_number + ".jpg')"
     slider.style.backgroundImage = photo;
+    button.style.display = "none";
+    button2.style.display = "none";
+    slide.style.animationName = "fader";
+    wait(980, 1.5, photo, slide, button, button2);
 
-    let i = 1;
+
+}
+
+function wait(time, repeat, photo, slide, button, button2){
+    let i = 0;
 
     function increment() {
-       i = i - 0.01;
-       slide.style.opacity = i;
+       i++;
+       console.log(i);
     }
 
     let timer = setTimeout(function myTimer() {
        increment();
-
-       timer = setTimeout(myTimer, 10);
-    }, 10);
+       timer = setTimeout(myTimer, time);
+    }, time);
 
     setTimeout(() => {
-    slide.style.opacity = 0;
-    clearTimeout(timer); }, 1000);
-
-    opacityslide()
-
-}
-
-function opacityslide(){
     slide.style.backgroundImage = photo;
-    slide.style.opacity = 1;
+    slide.style.animationName = ''
+    button.style.display = "block";
+    button2.style.display = "block";
+    clearTimeout(timer); }, repeat * time);
 }
+
 //
 //const slide = document.getElementsByClassName("slide")[0]
 //slide.style.backgroundImage = photo;

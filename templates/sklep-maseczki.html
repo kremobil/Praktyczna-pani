@@ -66,48 +66,67 @@
 						<p><i class="icon-ok-circled2"></i>Dla mężczyzn</p>
 					</div>
 				</div>
-				<div id="products">
-					{%for a in [0,5,10]%}
-					<div class="produts-raw">
-						{%if maseczki|length - a >= 5%}
-							{%for b in [0,1,2,3,4]%}
-								<div class="products-col">
-									<div class="product-name">
-										<p>{{maseczki[b + a]['name']}}<br/><span class="price"><b>{{maseczki[b + a]['price']}}zł</b></span></p>
+				<div class="products-container">
+					<div id="products">
+						{%for a in [0,5,10]%}
+						<div class="produts-raw">
+							{%if maseczki|length - a >= 5%}
+								{%for b in [0,1,2,3,4]%}
+									<div class="products-col">
+										<div class="product-name">
+											<p>{{maseczki[b + a]['name']}}<br/><span class="price"><b>{{maseczki[b + a]['price']}}zł</b></span></p>
+										</div>
+										<div class="product-image-plate">
+											{% set x = maseczki[a + b]["image"] %}
+											<img src="{{ url_for('static', filename='img/'+x) }}" width="187.5px" height="162.5px">
+										</div>
+										<div class="buy-button-plate">
+											<a href="{{url_for('maseczka', id=b + a)}}">
+												<p>Kup Teraz <i class="icon-cart-plus"></i></p>
+											</a>
+										</div>
 									</div>
-									<div class="product-image-plate">
-										{% set x = maseczki[a + b]["image"] %}
-										<img src="{{ url_for('static', filename='img/'+x) }}" width="187.5px" height="162.5px">
+								{%endfor%}
+							{%endif%}
+							{%if maseczki|length - a < 5%}
+								{%for b in range(maseczki|length - a)%}
+									<div class="products-col">
+										<div class="product-name">
+											<p>{{maseczki[b + a]['name']}}<br/><span class="price"><b>{{maseczki[b + a]['price']}}zł</b></span></p>
+										</div>
+										<div class="product-image-plate">
+											{% set x = maseczki[a + b]["image"] %}
+											<img src="{{ url_for('static', filename='img/'+x) }}" width="187.5px" height="162.5px">
+										</div>
+										<div class="buy-button-plate">
+											<a href="{{url_for('maseczka', id=b + a)}}">
+												<p>Kup Teraz <i class="icon-cart-plus"></i></p>
+											</a>
+										</div>
 									</div>
-									<div class="buy-button-plate">
-										<a href="{{url_for('maseczka', id=b + a)}}">
-											<p>Kup Teraz <i class="icon-cart-plus"></i></p>
-										</a>
-									</div>
-								</div>
-							{%endfor%}
-						{%endif%}
-						{%if maseczki|length - a < 5%}
-							{%for b in range(maseczki|length - a)%}
-								<div class="products-col">
-									<div class="product-name">
-										<p>{{maseczki[b + a]['name']}}<br/><span class="price"><b>{{maseczki[b + a]['price']}}zł</b></span></p>
-									</div>
-									<div class="product-image-plate">
-										{% set x = maseczki[a + b]["image"] %}
-										<img src="{{ url_for('static', filename='img/'+x) }}" width="187.5px" height="162.5px">
-									</div>
-									<div class="buy-button-plate">
-										<a href="{{url_for('maseczka', id=b + a)}}">
-											<p>Kup Teraz <i class="icon-cart-plus"></i></p>
-										</a>
-									</div>
-								</div>
-							{%endfor%}
-						{%endif%}
+								{%endfor%}
+							{%endif%}
 
+						</div>
+						{%endfor%}
 					</div>
-					{%endfor%}
+					<div id="next-page">
+						<div class="next-page-buttons">
+							<a href="https://google.com">
+								<div class="next-page-button-left">
+									❮
+								</div>
+							</a>
+							<div class="page-number">
+								1
+							</div>
+							<a href="https://google.com">
+								<div class="next-page-button-right">
+									❯
+								</div>
+							</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

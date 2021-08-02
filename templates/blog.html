@@ -19,9 +19,11 @@
 				<div id="logo">
 					<h1>Praktyczna Pani</h1>
 				</div>
-				<div id="Basket">
-					<i  class="icon-basket">&#8291;</i>
-				</div>
+				<a href="{{url_for('basket')}}">
+					<div id="Basket">
+						<i  class="icon-basket">&#8291;</i>
+					</div>
+				</a>
 				<a href="{{url_for('accountaboutme')}}">
 					<div id="Account">
 						<i  class="icon-user-circle">&#8291;</i>
@@ -52,7 +54,25 @@
 				</div>
 			</div>
 			<div id="content">
-
+				{%for post in posty%}
+					<a href="{{url_for('post')}}" target="_blank">
+						<div class="post-container">
+							<div class="post-image" style="background-image:url('../static/img/{{post['img']}}');">
+								<!--image in div-->
+							</div>
+							<div class="post-info">
+								<div class="post-hedder">
+									<b>
+										<p>{{post['header']}}</p>
+									</b>
+								</div>
+								<div class="post-content">
+									<p>{{post['text']}}</p>
+								</div>
+							</div>
+						</div>
+					</a>
+				{%endfor%}
 			</div>
 		</div>
 		<div id="fotter">
@@ -74,5 +94,6 @@
 			</div>
 			<p>2021 Praktyczna Pani.pl&copy; wszelkie prawa zastrzeżone</p>
 		</div>
+		<script src="{{ url_for('static', filename='js/slider.js') }}"></script>
 	</body>
 </html>
