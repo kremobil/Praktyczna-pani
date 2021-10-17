@@ -55,7 +55,7 @@
 			</div>
 			<div id="content">
 				{%for post in posty%}
-					<a href="{{url_for('post')}}" target="_blank">
+					<a href="{{url_for('post', id = post['id'])}}" target="_blank">
 						<div class="post-container">
 							<div class="post-image" style="background-image:url('../static/img/{{post['img']}}');">
 								<!--image in div-->

@@ -101,7 +101,7 @@
 						<div class="basic-account-info">
 							<div class="username-container">
 								<div class="username">
-									<p>Kremobil</p>
+									<p>{{user['nickname']}}</p>
 								</div>
 								<a>
 									<div class="username-button">
@@ -111,19 +111,67 @@
 							</div>
 							<div class="other-infos-container">
 								<div class="other-infos-row">
-									<div class="other-info-container"|>
-										<div class="other-info-name">
-											<p>Wiktor</p>
-										</div>
-										<a>
-											<div  class="other-info-button">
-												✎
-											</div>
-										</a>
+									<div class="other-info-container">
+										<script type="text/javascript">
+											function editname(option){
+												if(option == 1)
+													document.write("<div class='other-info-name'><p>{{user['name']}}</p></div><a><div  class='other-info-button'><button class='editname' onclick='editname(2)' style='width:40px;height:40px;'>✎</button></div></a>");
+												if(option == 2)
+													document.write("<div class='other-info-name'><p>Test</p></div><a><div  class='other-info-button'><button class='editname' onclick='editname(1)' style='width:40px;height:40px;'>✎</button></div></a>");
+											}
+											editname(1);
+										</script>
 									</div>
-									<div class="other-info-container"|>
+									<div class="other-infos-container">
+<!--								<div class="other-infos-row">-->
+<!--									<div class="other-info-container">-->
+<!--										<div class='other-info-name'>-->
+<!--											<p>{{user['name']}}</p>-->
+<!--										</div>-->
+<!--										<a>-->
+<!--											<div  class='other-info-button'>-->
+<!--												✎-->
+<!--											</div>-->
+<!--										</a>-->
+<!--									</div>-->
+<!--									<div class="other-info-container">-->
+<!--										<div class="other-info-name">-->
+<!--											<p>{{user['surename']}}</p>-->
+<!--										</div>-->
+<!--										<a>-->
+<!--											<div  class="other-info-button">-->
+<!--												✎-->
+<!--											</div>-->
+<!--										</a>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--								<div class="other-infos-row">-->
+<!--									<div class="other-info-container">-->
+<!--										<form>-->
+<!--										<input name="username"type="text" class="other-info-name" placeholder="nazwa użytkownika" onfocus="nazwa użytkownika" onblur="this.placeholder='nazwa użytkownika'" >-->
+<!--										<a>-->
+<!--											<submit  class="other-info-button">-->
+<!--												✔-->
+<!--											</submit>-->
+<!--										</a>-->
+<!--										</form>-->
+<!--									</div>-->
+<!--									<div class="other-info-container">-->
+<!--										<div class="other-info-name">-->
+<!--											<p>-->
+<!--												Mężczyzna-->
+<!--											</p>-->
+<!--										</div>-->
+<!--										<a>-->
+<!--											<div  class="other-info-button">-->
+<!--												✎-->
+<!--											</div>-->
+<!--										</a>-->
+<!--									</div>-->
+<!--								</div>-->
+									<div class="other-info-container">
 										<div class="other-info-name">
-											<p>Mężczyzna</p>
+											<p>{{user['surename']}}</p>
 										</div>
 										<a>
 											<div  class="other-info-button">
@@ -133,9 +181,9 @@
 									</div>
 								</div>
 								<div class="other-infos-row">
-									<div class="other-info-container"|>
+									<div class="other-info-container">
 										<div class="other-info-name">
-											<p>21 Lat</p>
+											<p>{{age}} lat</p>
 										</div>
 										<a>
 											<div  class="other-info-button">
@@ -143,9 +191,11 @@
 											</div>
 										</a>
 									</div>
-									<div class="other-info-container"|>
+									<div class="other-info-container">
 										<div class="other-info-name">
-											<p>Morzewiec</p>
+											<p>
+												Mężczyzna
+											</p>
 										</div>
 										<a>
 											<div  class="other-info-button">

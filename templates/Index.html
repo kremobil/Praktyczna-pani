@@ -79,7 +79,21 @@
 					{%for b in newproducts%}
 						<div class="new-products-col">
 							<div class="product-name">
-								<p>{{b['name']}}<br/><span class="price"><b>{{b['price']}}zł</b></span></p>
+								<p>
+									{{b['name']}}<br/>
+									{%if b['promotion']%}
+									<span class="oldprice">
+										<b>{{b['price']}}zł</b>
+									</span>
+									<span class="price">
+										<b>{{b['promotion']}}zł</b>
+									</span>
+									{%else%}
+									<span class="price">
+										<b>{{b['price']}}zł</b>
+									</span>
+									{%endif%}
+								</p>
 							</div>
 							<div class="product-image-plate">
 								{% set x = b["image"] %}

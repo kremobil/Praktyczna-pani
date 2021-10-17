@@ -77,9 +77,26 @@
 						<input name="nickname" type="text" placeholder="nazwa" onfocus="this.placeholder=''" onblur="this.placeholder='nazwa'" >
 						<input name="name" type="text" placeholder="imię" onfocus="this.placeholder=''" onblur="this.placeholder='imię'" >
 						<input name="surename" type="text" placeholder="nazwisko" onfocus="this.placeholder=''" onblur="this.placeholder='nazwisko'" >
-						<input name="age" type="text" placeholder="wiek" onfocus="this.placeholder=''" onblur="this.placeholder='wiek'" >
+						<select name="birthday" class="birthday">
+							<option value="0">Dzień</option>
+							{%for a in range(1,32)%}
+							<option value="{{a}}">{{a}}</option>
+							{%endfor%}
+						</select>
+						<select name="birthmonth" class="birthmonth">
+							<option value="0">Miesiąc</option>
+							{%for a in range(1,13)%}
+							<option value="{{a}}">{{a}}</option>
+							{%endfor%}
+						</select>
+						<select name="birthyear" class="birthyear">
+							<option value="0">Rok urodzenia</option>
+							{%for a in range(1900,2022)[::-1]%}
+							<option value="{{a}}">{{a}}</option>
+							{%endfor%}
+						</select>
 						<select name="sex">
-							<option value="0">Wybierz płeć:</option>
+							<option value="0">Płeć</option>
 							<option value="mężczyzna">mężczyzna</option>
 							<option value="kobieta">kobieta</option>
 							<option value="inna">inna</option>

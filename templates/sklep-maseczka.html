@@ -64,9 +64,20 @@
 							</h1>
 						</div>
 						<div id="price">
-							<h2>
-								{{maseczka['price']}}zł
-							</h2>
+							{%if maseczka['promotion']%}
+								<span class="oldprice" style="font-size:18px;">
+									<b>{{maseczka['price']}}zł</b>
+								</span>
+								<span class="price" style="font-size:24px;">
+									<b>{{maseczka['promotion']}}zł</b>
+								</span>
+							{%else%}
+								<h2>
+									<span class="price" style="font-size:24px;">
+										<b>{{maseczka['price']}}zł</b>
+									</span>
+								</h2>
+							{%endif%}
 						</div>
 						<div id="info">
 							<p>

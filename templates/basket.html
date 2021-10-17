@@ -65,7 +65,7 @@
 					{% for key, value in products.items() %}
 						{% for id, number in value.items() %}
 						<div class="basket-items">
-							<img src="{{ url_for('static', filename='img/'+maseczka[id]['image']) }}" width="150px" height="150px">
+							<img src="{{ url_for('static', filename='img/'+maseczka[id-1]['image']) }}" width="150px" height="150px">
 							<div class="basket-info">
 								<b>
 									<p>{{maseczka[id]['name']}}</p>
@@ -74,7 +74,7 @@
 							<div class="basket-mat">
 								<div class="basket-price">
 									<b>
-										<p>{{maseczka[id]['price'] * number}}.00zł</p>
+										<p>{{maseczka[id]['realprice'] * number}}.00zł</p>
 									</b>
 								</div>
 								<div class="basket-numbers">

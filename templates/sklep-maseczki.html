@@ -74,7 +74,21 @@
 								{%for b in [0,1,2,3,4]%}
 									<div class="products-col">
 										<div class="product-name">
-											<p>{{maseczki[b + a]['name']}}<br/><span class="price"><b>{{maseczki[b + a]['price']}}zł</b></span></p>
+											<p>
+												{{maseczki[b + a]['name']}}<br/>
+												{%if maseczki[b + a]['promotion']%}
+												<span class="oldprice">
+													<b>{{maseczki[b + a]['price']}}zł</b>
+												</span>
+												<span class="price">
+													<b>{{maseczki[b + a]['promotion']}}zł</b>
+												</span>
+												{%else%}
+												<span class="price">
+													<b>{{maseczki[b + a]['price']}}zł</b>
+												</span>
+												{%endif%}
+											</p>
 										</div>
 										<div class="product-image-plate">
 											{% set x = maseczki[a + b]["image"] %}
@@ -92,7 +106,21 @@
 								{%for b in range(maseczki|length - a)%}
 									<div class="products-col">
 										<div class="product-name">
-											<p>{{maseczki[b + a]['name']}}<br/><span class="price"><b>{{maseczki[b + a]['price']}}zł</b></span></p>
+											<p>
+												{{maseczki[b + a]['name']}}<br/>
+												{%if maseczki[b + a]['promotion']%}
+												<span class="oldprice">
+													<b>{{maseczki[b + a]['price']}}zł</b>
+												</span>
+												<span class="price">
+													<b>{{maseczki[b + a]['promotion']}}zł</b>
+												</span>
+												{%else%}
+												<span class="price">
+													<b>{{maseczki[b + a]['price']}}zł</b>
+												</span>
+												{%endif%}
+											</p>
 										</div>
 										<div class="product-image-plate">
 											{% set x = maseczki[a + b]["image"] %}
